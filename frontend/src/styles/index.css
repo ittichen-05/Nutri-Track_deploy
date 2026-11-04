@@ -1,0 +1,847 @@
+/* ============================================================
+   NutriTrack — Modern Responsive CSS Design System
+   Matches Screenshot 2 and Microproject Specifications
+   ============================================================ */
+
+:root {
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-light: #ecfdf5;
+  --primary-border: #a7f3d0;
+  
+  --secondary: #10b981;
+  --secondary-dark: #0f172a;
+  
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  
+  --blue-primary: #0284c7;
+  --blue-light: #f0f9ff;
+  --blue-border: #bae6fd;
+  
+  --protein-color: #0d9488;
+  --protein-bg: #ecfeff;
+  --carbs-color: #4338ca;
+  --carbs-bg: #eef2ff;
+  --fat-color: #ea580c;
+  --fat-bg: #fff7ed;
+  
+  --danger-color: #ef4444;
+  --danger-bg: #fee2e2;
+  --danger-border: #fecaca;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  padding: 24px 16px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ================= HEADER ================= */
+.header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 10px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28);
+}
+
+.header-title-block h1 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.student-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #065f46;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.student-badge strong {
+  font-weight: 700;
+  color: #047857;
+}
+
+/* ================= VIEW NAVIGATION TABS ================= */
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 5px;
+  border-radius: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.nav-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.nav-tab-btn.active {
+  background: #ffffff;
+  color: var(--text-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= CARD COMPONENT ================= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title-icon.green {
+  color: #10b981;
+}
+
+.card-title-icon.purple {
+  color: #8b5cf6;
+}
+
+.card-title-icon.blue {
+  color: #0284c7;
+}
+
+.card-title-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-meta-text {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ================= DASHBOARD TOP GRID ================= */
+.top-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .top-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Daily Calories */
+.calorie-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.calorie-val {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.calorie-unit {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.calorie-subtext {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #10b981;
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+/* Macronutrients Boxes */
+.macros-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  height: 100%;
+  align-items: center;
+}
+
+.macro-box {
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.macro-box.protein {
+  background-color: var(--protein-bg);
+}
+
+.macro-box.protein .macro-lbl {
+  color: #0e7490;
+}
+
+.macro-box.protein .macro-num {
+  color: #059669;
+}
+
+.macro-box.carbs {
+  background-color: var(--carbs-bg);
+}
+
+.macro-box.carbs .macro-lbl {
+  color: #4f46e5;
+}
+
+.macro-box.carbs .macro-num {
+  color: #4338ca;
+}
+
+.macro-box.fat {
+  background-color: var(--fat-bg);
+}
+
+.macro-box.fat .macro-lbl {
+  color: #c2410c;
+}
+
+.macro-box.fat .macro-num {
+  color: #d97706;
+}
+
+.macro-lbl {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.macro-num {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* ================= WATER INTAKE CARD ================= */
+.water-card .reset-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: opacity 0.2s;
+}
+
+.water-card .reset-btn:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.water-display-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.water-current {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--blue-primary);
+  line-height: 1;
+}
+
+.water-target {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.water-actions-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.water-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  color: var(--blue-primary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.water-btn:hover {
+  background-color: #e0f2fe;
+  transform: translateY(-1px);
+}
+
+.water-btn:active {
+  transform: translateY(0);
+}
+
+/* ================= MIDDLE GRID (LOG MEAL & TODAY'S MEALS) ================= */
+.main-two-col-grid {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .main-two-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Meal Form */
+.meal-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-select, .form-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-select:focus, .form-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.preview-energy-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.preview-energy-box strong {
+  color: #059669;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.btn-primary-green {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.15s, transform 0.1s;
+  margin-top: 6px;
+}
+
+.btn-primary-green:hover {
+  background: #059669;
+}
+
+.btn-primary-green:active {
+  transform: translateY(1px);
+}
+
+/* Meals Table */
+.meals-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.meals-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.meals-table th {
+  padding: 10px 12px;
+  color: #334155;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.meals-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+.meals-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.meal-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.meal-badge.Breakfast {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.meal-badge.Lunch {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.meal-badge.Dinner {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.meal-badge.Snacks {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.food-title-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cal-highlight {
+  color: #059669;
+  font-weight: 700;
+}
+
+.btn-icon-delete {
+  background: #fee2e2;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-icon-delete:hover {
+  background: #fecaca;
+  transform: scale(1.05);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ================= BOTTOM CARD (ADD NEW FOOD TO CATALOG) ================= */
+.catalog-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.catalog-form-row {
+  display: grid;
+  gap: 14px;
+}
+
+.catalog-form-row.four-cols {
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+}
+
+.catalog-form-row.three-cols {
+  grid-template-columns: 1fr 1fr 1.5fr;
+  align-items: flex-end;
+}
+
+@media (max-width: 680px) {
+  .catalog-form-row.four-cols,
+  .catalog-form-row.three-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-dark-slate {
+  background-color: #1e293b;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-dark-slate:hover {
+  background-color: #0f172a;
+}
+
+.btn-dark-slate:active {
+  transform: translateY(1px);
+}
+
+/* ================= TOAST / ALERT NOTIFICATIONS ================= */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideInUp 0.25s ease-out;
+}
+
+.toast-notice.success {
+  background: #059669;
+}
+
+.toast-notice.error {
+  background: #dc2626;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= EXTRA LAB FEATURES TABS (BMR, WATER CYLINDER, FOOD CATALOG) ================= */
+.tab-content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .feature-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cylinder-gauge-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  gap: 28px;
+}
+
+.cylinder-glass {
+  width: 90px;
+  height: 200px;
+  border: 4px solid #0284c7;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  overflow: hidden;
+  background: #f0f9ff;
+  box-shadow: inset 0 0 10px rgba(2, 132, 199, 0.1);
+}
+
+.cylinder-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  color: white;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.wave-line {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.stats-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.stat-chip {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-chip .val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stat-chip .lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Catalog Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-bar input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.catalog-food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.catalog-food-card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.catalog-food-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  padding: 12px 0;
+}
