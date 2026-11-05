@@ -34,7 +34,6 @@ Nutri-Track/
 ├── database/
 │   ├── schema.sql             # MySQL DDL for the 5 normalized tables
 │   └── seed_demo_data.js      # Seed script for Indian & global foods and demo meal logs
-├── run_project.bat            # Windows 1-click launcher
 └── README.md                  # Documentation and setup instructions
 ```
 
@@ -42,13 +41,7 @@ Nutri-Track/
 
 ## 🚀 Quick Start Guide
 
-### Option 1: One-Click Windows Launcher
-Double-click `run_project.bat` from File Explorer, or run in terminal:
-```bash
-.\run_project.bat
-```
-
-### Option 2: Running Frontend & Backend Manually
+### Running Frontend & Backend Manually
 
 #### Step 1: Start the Backend (Port 5000)
 ```bash
