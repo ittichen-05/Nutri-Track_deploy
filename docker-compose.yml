@@ -1,0 +1,44 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nutritrack-app
+    restart: always
+    ports:
+      - "80:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=nutri_user
+      - DB_PASSWORD=NutriSecurePass2026!
+      - DB_NAME=nutritrack_db
+      - JWT_SECRET=nutritrack_production_jwt_secret_key_2026
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  mysql:
+    image: mysql:8.0
+    container_name: nutritrack-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: RootSecurePass2026!
+      MYSQL_DATABASE: nutritrack_db
+      MYSQL_USER: nutri_user
+      MYSQL_PASSWORD: NutriSecurePass2026!
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pRootSecurePass2026!"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:

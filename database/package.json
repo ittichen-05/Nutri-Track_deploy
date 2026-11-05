@@ -1,5 +1,13 @@
 {
   "name": "nutritrack-database",
   "version": "1.0.0",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "seed": "node seed_demo_data.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "mysql2": "^3.12.0"
+  }
 }

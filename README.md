@@ -78,6 +78,26 @@ node seed_demo_data.js
 
 ---
 
+## ☁️ AWS EC2 Production Deployment
+
+Deploying NutriTrack to an AWS EC2 instance (Ubuntu 22.04 / 24.04 LTS Free Tier) can be done with a single automated script or via Docker:
+
+### Option 1: 1-Click Automated Script (PM2 + Nginx + MySQL)
+```bash
+git clone https://github.com/ittichen-05/Nutri-Track_deploy.git
+cd Nutri-Track_deploy
+chmod +x deploy-ec2.sh
+./deploy-ec2.sh
+```
+*The script configures 2GB swap space (prevents t2.micro RAM issues), installs Node 20 LTS, Nginx, and MySQL, imports schema, seeds data, builds the React frontend, launches the app with PM2, and configures Nginx reverse proxy on port 80.*
+
+### Option 2: Docker Compose
+```bash
+docker compose up -d --build
+```
+
+---
+
 ## 📊 Features Implemented
 
 - **Daily Calorie Tracker**: Dynamic progress bar, 2000 kcal target, live remaining calculation.
